@@ -1,0 +1,27 @@
+body {
+  background-color: #232323;
+}
+
+.square {
+  width: 30%;
+  background-color: purple;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.66%;
+  border-radius: 10px;
+}
+
+#container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+#menu {
+  background: #ffffff;
+  height: 30px;
+  text-align: center;
+}
