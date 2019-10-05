@@ -48,11 +48,15 @@ newColors.addEventListener("click", function() {
   pickedColor = pickColor();
   // display new picked color
   colorDisplay.textContent = pickedColor;
+  // change New Color button text back
+  this.textContent = "New Colors";
+  // clear correct message
+  messageDisplay.textContent = "";
   // change color of squares
   for(var i = 0; i < squares.length; i++) {
     squares[i].style.background = colors[i];
   }
-  h1.style.background = "#232323";
+  h1.style.background = "#4682B4";
 })
 
 for(var i = 0; i < squares.length; i++) {
