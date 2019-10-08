@@ -24,7 +24,7 @@ body {
 h1 {
   color: #ffffff;
   text-align: center;
-  background: #4682B4;
+  background: #2f5657;
   margin: 0;
   padding: 20px 0;
   font-weight: normal;
@@ -33,7 +33,8 @@ h1 {
 }
 
 #colorDisplay {
-  font-size: 200%;
+  font-size: calc(1em + 1vw);
+  display: block;
 }
 
 #menu {
@@ -48,7 +49,7 @@ h1 {
 }
 
 .selected {
-  background: #468284;
+  background: #2f5657;
   color: #ffffff;
 }
 
@@ -58,7 +59,7 @@ button {
   text-transform: uppercase;
   height: 100%;
   font-weight: 700;
-  color: #468284;
+  color: #2f5657;
   letter-spacing: 1px;
   font-size: inherit;
   transition: all 0.3s;
@@ -69,5 +70,5 @@ button {
 
 button:hover {
   color: #ffffff;
-  background: #468284;
+  background: #2f5657;
 }
