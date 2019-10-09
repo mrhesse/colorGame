@@ -37,6 +37,7 @@ function setupSquares() {
         newColors.textContent = "Play Again?";
         changeColors(clickedColor);
         h1.style.background = clickedColor;
+        h1.style.color = contrastColor(getRGB(clickedColor));
       } else {
         this.style.background = "#232323";
         messageDisplay.textContent = "Try Again";
@@ -60,6 +61,7 @@ function reset() {
     }
   }
   h1.style.background = "#4682B4";
+  h1.style.color = "#ffffff";
 }
 
 
@@ -107,5 +109,27 @@ function randomColor() {
   var g = Math.floor(Math.random() * 256);
   var b = Math.floor(Math.random() * 256);
   return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+
+
+function getRGB(color) {
+  var rgb = color.substring(color.indexOf('(') +1, color.length -1).split(', ');
+  return rgb;
+}
+
+/* takes the array of the rgb color and calculates the luminance to determine the color of the font to meet w3c guidelines for accessibility */
+function contrastColor(rgb) {
+  var lrgb = [];
+  rgb.forEach(function(l){
+    l = l / 255.0;
+    if(l <= 0.03928) {
+      l = l / 12.92;
+    } else {
+      l = Math.pow((l + 0.055) / 1.055, 2.4);
+    }
+    lrgb.push(l);
+  });
+  var lumin = 0.2126 * lrgb[0] + 0.7152 * lrgb[1] + 0.0722 * lrgb[2];
+  return (lumin > 0.179) ? '#000000' : '#ffffff';
 }
 
